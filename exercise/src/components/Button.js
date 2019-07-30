@@ -8,7 +8,9 @@ const styles = {
   }
 };
 export default class Button extends Component {
+  
   render() {
+    // console.log('object', this.props);
     return (
       <button style={{...styles.button, ...this.props.style}}>
         {this.props.children}

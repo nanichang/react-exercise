@@ -4,7 +4,23 @@ import Button from './Button';
 
 export default class TopBar extends Component {
   state: { loggedIn: false }
+  
+  logIn = () => {
+
+    this.setState({loggedIn: !this.state.loggedIn});
+    // cl
+  };
+
+  onToggleList = () => {
+    this.setState(prevState => ({
+      loggedIn: !prevState.loggedIn,
+    }));
+  }
+
   render() {
+    
+    console.log("logged", this.state);
+
     return (
       <header style={{
         height:          48,
@@ -27,7 +43,7 @@ export default class TopBar extends Component {
         </div>
         <div style={{float: 'left', color: 'white', flex: 1}} />
         <div style={{float: 'right', paddingRight: 20}}>
-          <Button style={{backgroundColor: 'blue', color: 'white'}}>Login</Button>
+          <Button style={{backgroundColor: 'blue', color: 'white'}} onClick={this.onToggleList}>Login</Button>
           <Button style={{backgroundColor: 'red', color: 'white'}}>Signup</Button>
         </div>
       </header>
